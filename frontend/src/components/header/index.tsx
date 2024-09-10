@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import TakaLogo from "@/public/TAKA_Logo.png";
-import { Button } from "@/components/ui/button";
 import {
   BadgeCheckIcon,
   ClockIcon,
@@ -15,11 +14,14 @@ import {
   TicketIcon,
   TruckIcon,
 } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import Container from "../ui/container";
-import Link from "next/link";
-import { LocationCombobox } from "./location-combobox";
-import { SearchInput } from "./search-input";
+import Container from "@/components/ui/container";
+import { SearchInput } from "@/components/header/search-input";
+import { LocationCombobox } from "@/components/header/location-combobox";
+
+import TakaLogo from "@/public/TAKA_Logo.png";
 
 export const Header = () => {
   const [scrollY, setScrollY] = useState(0);

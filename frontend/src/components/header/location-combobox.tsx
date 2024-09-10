@@ -21,34 +21,22 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
 
 const PROVINCE_API_KEY = process.env.NEXT_PUBLIC_PROVINCE_API_KEY;
 
-console.log(PROVINCE_API_KEY);
-
-interface Region {
-  code: number;
-  name: string;
-}
-
-interface District {
-  code: number;
-  name: string;
-}
-
-interface Ward {
+interface Location {
   code: number;
   name: string;
 }
 
 interface LocationData {
-  region: Region | null;
-  district: District | null;
-  ward: Ward | null;
+  region: Location | null;
+  district: Location | null;
+  ward: Location | null;
 }
 
 export const LocationCombobox = () => {
@@ -63,9 +51,9 @@ export const LocationCombobox = () => {
     ward: null,
   });
 
-  const [regions, setRegions] = useState<Region[]>([]);
-  const [districts, setDistricts] = useState<District[]>([]);
-  const [wards, setWards] = useState<Ward[]>([]);
+  const [regions, setRegions] = useState<Location[]>([]);
+  const [districts, setDistricts] = useState<Location[]>([]);
+  const [wards, setWards] = useState<Location[]>([]);
 
   useEffect(() => {
     const deliveryLocation: LocationData | null =
@@ -80,6 +68,7 @@ export const LocationCombobox = () => {
 
   const fetchData = async (
     url: string,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setter: React.Dispatch<React.SetStateAction<any>>
   ) => {
     try {
