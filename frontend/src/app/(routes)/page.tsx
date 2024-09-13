@@ -1,14 +1,86 @@
-import { HeroSection } from "@/components/hero-section";
-import { Sidebar } from "@/components/sidebar";
 import Container from "@/components/ui/container";
+import { Sidebar } from "@/components/sidebar";
 import { Separator } from "@/components/ui/separator";
+import { HeroSection } from "@/components/section/hero-section";
+import { PromoSection } from "@/components/section/promo-section";
+import { ProductSection } from "@/components/section/product-section";
+
+const promosData = [
+  {
+    name: "Top Deal",
+    imgUrl:
+      "https://salt.tikicdn.com/ts/upload/8b/a4/9f/84d844f70e365515b6e4e3e745dac1d5.png",
+    link: "#",
+  },
+  {
+    name: "Top Deal",
+    imgUrl:
+      "https://salt.tikicdn.com/ts/upload/8b/a4/9f/84d844f70e365515b6e4e3e745dac1d5.png",
+    link: "#",
+  },
+  {
+    name: "Top Deal",
+    imgUrl:
+      "https://salt.tikicdn.com/ts/upload/8b/a4/9f/84d844f70e365515b6e4e3e745dac1d5.png",
+    link: "#",
+  },
+  {
+    name: "Top Deal",
+    imgUrl:
+      "https://salt.tikicdn.com/ts/upload/8b/a4/9f/84d844f70e365515b6e4e3e745dac1d5.png",
+    link: "#",
+  },
+  {
+    name: "Top Deal",
+    imgUrl:
+      "https://salt.tikicdn.com/ts/upload/8b/a4/9f/84d844f70e365515b6e4e3e745dac1d5.png",
+    link: "#",
+  },
+  {
+    name: "Top Deal",
+    imgUrl:
+      "https://salt.tikicdn.com/ts/upload/8b/a4/9f/84d844f70e365515b6e4e3e745dac1d5.png",
+    link: "#",
+  },
+  {
+    name: "Top Deal",
+    imgUrl:
+      "https://salt.tikicdn.com/ts/upload/8b/a4/9f/84d844f70e365515b6e4e3e745dac1d5.png",
+    link: "#",
+  },
+  {
+    name: "Top Deal",
+    imgUrl:
+      "https://salt.tikicdn.com/ts/upload/8b/a4/9f/84d844f70e365515b6e4e3e745dac1d5.png",
+    link: "#",
+  },
+  {
+    name: "Top Deal",
+    imgUrl:
+      "https://salt.tikicdn.com/ts/upload/8b/a4/9f/84d844f70e365515b6e4e3e745dac1d5.png",
+    link: "#",
+  },
+  {
+    name: "Top Deal",
+    imgUrl:
+      "https://salt.tikicdn.com/ts/upload/8b/a4/9f/84d844f70e365515b6e4e3e745dac1d5.png",
+    link: "#",
+  },
+];
 
 export default function Home() {
   return (
-    <Container className="flex py-4 space-x-4">
-      <Sidebar />
-      <div className="w-full space-y-4">
+    <Container className="py-4 grid grid-cols-12 gap-4">
+      <div className="col-span-2">
+        <Sidebar />
+      </div>
+      <div className="w-full space-y-4 col-span-10">
         <HeroSection />
+        <PromoSection promos={promosData} />
+        <ProductSection />
+        <ProductSection />
+        <PromoSection promos={promosData} />
+        <ProductSection />
         <div>
           <div>
             <div className="w-48 h-24 bg-main-foreground text-center text-main flex items-center justify-center">

@@ -64,7 +64,7 @@ const CommandList = React.forwardRef<
   <ScrollArea ref={ref}>
     <CommandPrimitive.List
       ref={ref}
-      className={cn("h-[400px] overflow-hidden overflow-x-hidden", className)}
+      className={cn("overflow-hidden overflow-x-hidden", className)}
       {...props}
     />
     <ScrollBar orientation="vertical" />

@@ -73,7 +73,7 @@ export const Header = () => {
           <LocationCombobox />
           <SearchInput />
           <div className="flex items-center space-x-2">
-            <Button variant="main" className="text-gray-500">
+            <Button variant="main">
               <HouseIcon className="size-5 mr-2" />
               Home
             </Button>

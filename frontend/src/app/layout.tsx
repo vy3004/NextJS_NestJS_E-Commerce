@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "@/app/globals.css";
+
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-border`}>
+      <body className={`${inter.className} bg-secondary`}>
         <Header />
         {children}
         <Footer />

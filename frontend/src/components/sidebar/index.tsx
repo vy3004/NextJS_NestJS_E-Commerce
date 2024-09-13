@@ -93,7 +93,7 @@ const services = [
 
 export const Sidebar = () => {
   return (
-    <Command className="bg-card h-screen max-w-56 rounded-xl border">
+    <Command className="bg-card h-screen rounded-xl border sticky top-4">
       <CommandInput placeholder="Search ..." />
       <CommandList className="h-full px-2">
         <CommandEmpty>No results found.</CommandEmpty>

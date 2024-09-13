@@ -36,6 +36,7 @@ export const HeroSection = () => {
       opts={{
         align: "start",
         loop: true,
+        slidesToScroll: 2,
       }}
       plugins={[
         Autoplay({
