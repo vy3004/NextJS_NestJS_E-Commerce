@@ -1,5 +1,5 @@
 import aqp from 'api-query-params';
-import { Model } from 'mongoose';
+import mongoose, { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { BadRequestException, Injectable } from '@nestjs/common';
 
@@ -68,11 +68,20 @@ export class UsersService {
     return `This action returns a #${id} user`;
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(updateUserDto: UpdateUserDto) {
+    return await this.userModel.updateOne(
+      { _id: updateUserDto._id },
+      { ...updateUserDto },
+    );
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: string) {
+    // Check mongodb id
+    if (mongoose.isValidObjectId(id)) {
+      // Remove user
+      return await this.userModel.deleteOne({ _id: id });
+    } else {
+      throw new BadRequestException(`Id ${id} invalid format`);
+    }
   }
 }

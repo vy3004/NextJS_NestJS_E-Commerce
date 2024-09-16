@@ -17,6 +17,4 @@ export class CreateUserDto {
   address: string;
 
   image: string;
-
-  accountType: string;
 }
