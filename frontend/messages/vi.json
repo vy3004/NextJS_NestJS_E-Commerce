@@ -1,0 +1,32 @@
+{
+  "RootLayout": {
+    "title": "Taka - Mua hàng giá tốt",
+    "description": "Taka - Mua hàng giá tốt"
+  },
+  "Header": {
+    "Search": "Tìm kiếm",
+    "Policies": "Cam kết",
+    "100% Authentic Products": "100% hàng thật",
+    "200% Refund If Fake": "Hoàn 200% nếu là hàng giả",
+    "30-Day Returns": "30 ngày đổi trả",
+    "24-Hour Fast Delivery": "Giao nhanh 24h",
+    "Super Low Prices": "Giá siêu rẻ",
+    "Free Shipping Anywhere": "Freeship mọi nơi"
+  },
+  "LocationCombobox": {
+    "Your location": "Vị trí của bạn",
+    "Delivery Location": "Vị trí giao hàng",
+    "Choose your address and we will specify the offer for your area": "Chọn địa chỉ của bạn và chúng tôi sẽ chỉ định ưu đãi cho khu vực của bạn",
+    "Choose address": "Chọn địa chỉ",
+    "Select region": "Chọn tỉnh/thành phố",
+    "Select district": "Chọn quận/huyện",
+    "Select ward": "Chọn phường/xã",
+    "Delivery to this location": "Giao hàng đến địa điểm này",
+    "Shipping address setup successful": "Cài đặt địa chỉ giao hàng thành công",
+    "Not selected": "Chưa chọn"
+  },
+  "LocaleToggle": {
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt"
+  }
+}

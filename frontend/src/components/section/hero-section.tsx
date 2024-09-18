@@ -13,12 +13,12 @@ import {
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 
-import HeroImage1 from "@/public/hero1.jpg.webp";
-import HeroImage2 from "@/public/hero2.jpg.webp";
-import HeroImage3 from "@/public/hero3.jpg.webp";
-import HeroImage4 from "@/public/hero4.jpg.webp";
-import HeroImage5 from "@/public/hero5.jpg.webp";
-import HeroImage6 from "@/public/hero6.jpg.webp";
+import HeroImage1 from "/public/hero1.jpg.webp";
+import HeroImage2 from "/public/hero2.jpg.webp";
+import HeroImage3 from "/public/hero3.jpg.webp";
+import HeroImage4 from "/public/hero4.jpg.webp";
+import HeroImage5 from "/public/hero5.jpg.webp";
+import HeroImage6 from "/public/hero6.jpg.webp";
 
 const HeroImages = [
   HeroImage1,

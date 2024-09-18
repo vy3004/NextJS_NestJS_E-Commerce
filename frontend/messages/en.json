@@ -1,0 +1,32 @@
+{
+  "RootLayout": {
+    "title": "Taka E-Commerce",
+    "description": "Taka E-Commerce"
+  },
+  "Header": {
+    "Search": "Search",
+    "Policies": "Policies",
+    "100% Authentic Products": "100% Authentic Products",
+    "200% Refund If Fake": "200% Refund If Fake",
+    "30-Day Returns": "30-Day Returns",
+    "24-Hour Fast Delivery": "24-Hour Fast Delivery",
+    "Super Low Prices": "Super Low Prices",
+    "Free Shipping Anywhere": "Free Shipping Anywhere"
+  },
+  "LocationCombobox": {
+    "Your location": "Your location",
+    "Delivery Location": "Delivery Location",
+    "Choose your address and we will specify the offer for your area": "Choose your address and we will specify the offer for your area",
+    "Choose address": "Choose address",
+    "Select region": "Select region",
+    "Select ward": "Select ward",
+    "Select district": "Select district",
+    "Delivery to this location": "Delivery to this location",
+    "Shipping address setup successful": "Shipping address setup successful",
+    "Not selected": "Not selected"
+  },
+  "LocaleToggle": {
+    "en": "English",
+    "vi": "Vietnamese"
+  }
+}

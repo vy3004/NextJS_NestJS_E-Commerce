@@ -1,5 +1,5 @@
-import Container from "@/components/ui/container";
 import { Sidebar } from "@/components/sidebar";
+import { Container } from "@/components/ui/container";
 import { Separator } from "@/components/ui/separator";
 import { HeroSection } from "@/components/section/hero-section";
 import { PromoSection } from "@/components/section/promo-section";

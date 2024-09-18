@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { ChevronsUpDown, LoaderIcon, MapPinIcon } from "lucide-react";
 
 import {
@@ -24,6 +25,8 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
+import { useToast } from "@/hooks/use-toast";
+
 import { cn } from "@/lib/utils";
 
 const PROVINCE_API_KEY = process.env.NEXT_PUBLIC_PROVINCE_API_KEY;
@@ -40,6 +43,9 @@ interface LocationData {
 }
 
 export const LocationCombobox = () => {
+  const t = useTranslations("LocationCombobox");
+  const { toast } = useToast();
+
   const [open, setOpen] = useState<boolean>(false);
   const [option, setOption] = useState<number>(1);
   const [currentLocation, setCurrentLocation] = useState<LocationData | null>(
@@ -50,7 +56,6 @@ export const LocationCombobox = () => {
     district: null,
     ward: null,
   });
-
   const [regions, setRegions] = useState<Location[]>([]);
   const [districts, setDistricts] = useState<Location[]>([]);
   const [wards, setWards] = useState<Location[]>([]);
@@ -68,7 +73,6 @@ export const LocationCombobox = () => {
 
   const fetchData = async (
     url: string,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setter: React.Dispatch<React.SetStateAction<any>>
   ) => {
     try {
@@ -138,6 +142,10 @@ export const LocationCombobox = () => {
         "delivery-location",
         JSON.stringify(selectedLocation)
       );
+      toast({
+        title: t("Shipping address setup successful"),
+        description: `${selectedLocation.ward?.name}, ${selectedLocation.district?.name}, ${selectedLocation.region?.name}`,
+      });
     }
     setOption(1);
     setOpen(false);
@@ -160,9 +168,11 @@ export const LocationCombobox = () => {
           className="h-11 px-2 justify-between space-x-2 text-gray-500"
         >
           <div className="text-left">
-            <span className="text-sm font-light">Your location</span>
+            <span className="text-sm font-light">{t("Your location")}</span>
             <p className="font-medium text-main">
-              {currentLocation ? currentLocation.region?.name : "All"}
+              {currentLocation
+                ? currentLocation.region?.name
+                : t("Not selected")}
             </p>
           </div>
           <ChevronsUpDown className="size-5" />
@@ -172,12 +182,14 @@ export const LocationCombobox = () => {
         <Command className="border p-4">
           <CommandList>
             <h3 className="text-center font-semibold mb-2">
-              Delivery Location
+              {t("Delivery Location")}
             </h3>
             <CommandSeparator />
             <CommandGroup
               className="p-0 mb-2"
-              heading="Choose your address and we will specify the offer for your area"
+              heading={t(
+                "Choose your address and we will specify the offer for your area"
+              )}
             >
               {currentLocation && (
                 <div className="space-y-2">
@@ -209,7 +221,7 @@ export const LocationCombobox = () => {
                         )}
                       />
                     </div>
-                    <span>Chọn khu vực</span>
+                    <span>{t("Choose address")}</span>
                   </CommandItem>
                 </div>
               )}
@@ -229,7 +241,7 @@ export const LocationCombobox = () => {
                 onOpenChange={handleRegionOpenChange}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Chọn tỉnh/thành phố" />
+                  <SelectValue placeholder={t("Select region")} />
                 </SelectTrigger>
                 <SelectContent>
                   {regions.length > 0 ? (
@@ -261,7 +273,7 @@ export const LocationCombobox = () => {
                 onOpenChange={handleDistrictOpenChange}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Chọn quận/huyện" />
+                  <SelectValue placeholder={t("Select district")} />
                 </SelectTrigger>
                 <SelectContent>
                   {districts.length > 0 ? (
@@ -292,7 +304,7 @@ export const LocationCombobox = () => {
                 onOpenChange={handleWardOpenChange}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Chọn phường/xã" />
+                  <SelectValue placeholder={t("Select ward")} />
                 </SelectTrigger>
                 <SelectContent>
                   {wards.length > 0 ? (
@@ -313,7 +325,7 @@ export const LocationCombobox = () => {
             onClick={handleSetDeliveryLocation}
             disabled={isButtonDisabled()}
           >
-            Giao đến địa điểm này
+            {t("Delivery to this location")}
           </Button>
         </Command>
       </PopoverContent>
